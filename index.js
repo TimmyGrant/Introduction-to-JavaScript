@@ -19,7 +19,7 @@ Do the following:
 */
 let votingAge = 18
 if (votingAge > 17) {
-  true;
+ true;
 }
 
 
@@ -154,29 +154,45 @@ Use the game function below to do the following:
   HINT: While you can complete this with only conditionals based on strings, it may help to equate choice to a number when using Math.random()
 */
 
-function game( usersChoices ){
+function game( userchoice ){
   // create variable and use math.random
-  let computerchoice = Math.random();
-  let computersStringChoice = '';
-  if(computerchoice > .67){
-    computersStringChoice = "Paper";
-  } else if (computerchoice > .33){
-    computersStringChoice = "Scissors";
-  } else if (computerchoice >= 0){
-    computersStringChoice = "Rock";
+ let cpu = Math.floor(Math.random());
+  let cpuStringChoice = '';
+  if(cpu >= 2){
+    cpuStringChoice = 'paper';
+  } else if (cpu >= 1){
+    cpuStringChoice = 'scissors';
+  } else if (cpu >= 0){
+    cpuStringChoice = 'rock';
   }
   // if computer chooses paper, rock loses
-  if(computerStringChoice === 'Paper' && usersChoices === 'Rock'){
-    return "You Lose";
-  } else if (computerStringChoice === 'Paper' && userchoices === 'Scissors'){
-    return "You Win";
-  } else if (computerStringChoice === 'Paper' && userChoices === 'Paper'){
-    return "Tie Game";
+  if(cpuStringChoice === 'paper' && userchoice === 'rock'){
+    return "you lose!";
+  } else if (cpuStringChoice === 'paper' && userchoice === 'scissors'){
+    return "you win!";
+  } else if (cpuStringChoice === 'paper' && userchoice === 'paper'){
+    return "it's a tie";
+  }
+  if(cpuStringChoice === 'scissors' && userchoice === 'rock'){
+    return "you win!";
+  } else if (cpuStringChoice === 'scissors' && userchoice === 'paper'){
+    return "you lose!";
+  } else if (cpuStringChoice === 'scissors' && userchoice === 'scissors'){
+    return "it's a tie";
+  }
+  if(cpuStringChoice === 'rock' && userchoice === 'paper'){
+    return "you win!";
+  } else if (cpuStringChoice === 'rock' && userchoice === 'scissors'){
+    return "you lose!";
+  } else if (cpuStringChoice === 'rock' && userchoice === 'rock'){
+    return "it's a tie";
   }
   
 }
   
-  game('Rock')
+game('paper') 
+game('scissors')
+game('rock')
 
 /*🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 5 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀*/
 
@@ -188,9 +204,10 @@ Using the miles function below do the following:
   2. Convert the number of kiolmeters received to miles
   3. Return the number of miles
 */
-
-function miles(/*add your code here*/){
-    /*add your code here*/
+let km = 3;
+function miles(km){
+    miles = km*.621371;
+    return miles;
   }
 
 
@@ -202,9 +219,10 @@ Using the feet function below do the following:
   2. Convert the number of cm to feet
   3. Return number of feet
 */
-
-function feet(/*add your code here*/){
-    /*add your code here*/
+let cm = 4;
+function feet(cm){
+    feet = cm/30.48;
+    return feet;
   }
  
 
